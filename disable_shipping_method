@@ -1,0 +1,9 @@
+// disable shipping methods based on postcode
+add_filter( 'woocommerce_package_rates', 'disable_shipping_method', 10, 2 );
+function disable_shipping_method( $rates, $package ) {
+
+	unset($rates['slug shipping ex. sicepat-reg'] );
+	 
+  return $rates;
+    
+}
